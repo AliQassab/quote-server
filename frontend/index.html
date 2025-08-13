@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quote Generator</h1>
+
+      <div id="quote-display" class="quote-display">
+        <div class="loading">Click "Get Quote" to fetch a random quote!</div>
+      </div>
+
+      <div class="button-group">
+        <button id="get-quote-btn">Get Quote</button>
+        <button id="show-form-btn">Add New Quote</button>
+      </div>
+
+      <div id="form-section" class="form-section" style="display: none">
+        <h2>Add a New Quote</h2>
+
+        <div class="success-message" id="success-message"></div>
+        <div class="error-message" id="error-message"></div>
+
+        <form id="quote-form">
+          <div class="form-group">
+            <label for="quote-input">Quote:</label>
+            <textarea
+              id="quote-input"
+              name="quote"
+              placeholder="Enter the quote here..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="author-input">Author:</label>
+            <input
+              type="text"
+              id="author-input"
+              name="author"
+              placeholder="Enter the author's name..."
+              required
+            />
+          </div>
+
+          <div class="button-group">
+            <button type="submit" id="submit-quote-btn">Add Quote</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
