@@ -1,7 +1,7 @@
-// Use same-origin API base
-const API_BASE_URL = "";
+// Replace with your actual Coolify API URL
+const API_BASE_URL =
+  "https://r8ock4ss8soog8k0cwg4wo44.hosting.codeyourfuture.io";
 
-// DOM elements
 const quoteDisplay = document.getElementById("quote-display");
 const getQuoteBtn = document.getElementById("get-quote-btn");
 const showFormBtn = document.getElementById("show-form-btn");
@@ -41,13 +41,12 @@ function showErrorMessage(message) {
   successMessage.style.display = "none";
 }
 
-// Fetch a random quote from the backend
 async function fetchQuote() {
   try {
     showLoading();
     getQuoteBtn.disabled = true;
 
-    const response = await fetch(`/api/quote`);
+    const response = await fetch(`${API_BASE_URL}/`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,7 +67,7 @@ async function fetchQuote() {
 // Submit a new quote to the backend
 async function submitQuote(quoteText, author) {
   try {
-    const response = await fetch(`/api/quote`, {
+    const response = await fetch(`${API_BASE_URL}/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

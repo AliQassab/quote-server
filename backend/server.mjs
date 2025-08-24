@@ -1,27 +1,14 @@
 import express from "express";
 import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Recreate __dirname for ESM
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 // Middleware
-app.use(cors());
+app.use(cors()); // Allow requests from any origin
 app.use(express.json());
 
-// Serve static frontend assets
-app.use(express.static(path.join(__dirname, "..", "frontend")));
-
-// Routes
-app.get("/", (_, res) => {
-  res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
-});
-
-// Quotes
+// Quotes data
 const quotes = [
   {
     quote:
@@ -41,9 +28,12 @@ const quotes = [
 
 const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
-app.get("/api/quote", (_, res) => res.json(randomQuote()));
+// API Routes
+app.get("/", (req, res) => {
+  res.json(randomQuote());
+});
 
-app.post("/api/quote", (req, res) => {
+app.post("/", (req, res) => {
   const { quote, author } = req.body;
   if (!quote?.trim() || !author?.trim()) {
     return res
@@ -55,7 +45,7 @@ app.post("/api/quote", (req, res) => {
   res.json({ message: "Quote added", quote: newQuote });
 });
 
-// Start
+// Start server
 app.listen(port, () =>
-  console.log(`Server running at http://localhost:${port}`)
+  console.log(`API Server running at http://localhost:${port}`)
 );
