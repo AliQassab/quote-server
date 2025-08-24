@@ -47,7 +47,7 @@ async function fetchQuote() {
     showLoading();
     getQuoteBtn.disabled = true;
 
-    const response = await fetch(`/api/quote`);
+    const response = await fetch(`/`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,7 +68,7 @@ async function fetchQuote() {
 // Submit a new quote to the backend
 async function submitQuote(quoteText, author) {
   try {
-    const response = await fetch(`/api/quote`, {
+    const response = await fetch(`/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
