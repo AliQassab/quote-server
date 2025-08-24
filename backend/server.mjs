@@ -41,9 +41,9 @@ const quotes = [
 
 const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 
-app.get("/", (_, res) => res.json(randomQuote()));
+app.get("/api/quote", (_, res) => res.json(randomQuote()));
 
-app.post("/", (req, res) => {
+app.post("/api/quote", (req, res) => {
   const { quote, author } = req.body;
   if (!quote?.trim() || !author?.trim()) {
     return res
