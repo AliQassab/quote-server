@@ -1,4 +1,4 @@
-// Replace with your actual Coolify API URL
+
 const API_BASE_URL = "https://ali-quote-sever-bn.hosting.codeyourfuture.io";
 
 const quoteDisplay = document.getElementById("quote-display");
