@@ -4,7 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 // Resolve __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -57,15 +57,8 @@ function pickRandomQuote() {
   return quotes[randomIndex];
 }
 
-// GET endpoint - Serve frontend
-app.get("/", (req, res) => {
-  console.log("Serving index.html");
-  res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
-});
-
 // GET endpoint - Get a random quote (JSON)
-app.get("/api/quote", (req, res) => {
-  console.log("Received a request for a quote");
+app.get("/", (req, res) => {
   const quote = pickRandomQuote();
   res.json({
     quote: quote.quote,
@@ -74,9 +67,7 @@ app.get("/api/quote", (req, res) => {
 });
 
 // POST endpoint - Add a new quote
-app.post("/api/quote", (req, res) => {
-  console.log("Received a request to add a quote");
-
+app.post("/", (req, res) => {
   const { quote, author } = req.body;
 
   // Validation
