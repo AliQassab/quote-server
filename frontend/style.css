@@ -32,7 +32,7 @@ h1 {
 
 .quote-display {
   background: #f8f9fa;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #4c63d2;
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
@@ -45,7 +45,7 @@ h1 {
 .quote-text {
   font-size: 1.2em;
   font-style: italic;
-  color: #444;
+  color: #2c2c2c;
   margin-bottom: 10px;
   line-height: 1.6;
 }
@@ -53,7 +53,7 @@ h1 {
 .quote-author {
   text-align: right;
   font-weight: bold;
-  color: #666;
+  color: #4a4a4a;
   font-size: 1em;
 }
 
@@ -63,7 +63,7 @@ h1 {
 
 .loading {
   text-align: center;
-  color: #999;
+  color: #6a6a6a;
   font-style: italic;
 }
 
@@ -81,7 +81,7 @@ h1 {
 }
 
 button {
-  background: #667eea;
+  background: #4c63d2;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -94,9 +94,9 @@ button {
 }
 
 button:hover {
-  background: #5a6fd8;
+  background: #3d4fb8;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 5px 15px rgba(76, 99, 210, 0.3);
 }
 
 button:active {
@@ -123,7 +123,7 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
+  color: #2c2c2c;
 }
 
 input[type="text"],
@@ -140,7 +140,7 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #4c63d2;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
